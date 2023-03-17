@@ -24,15 +24,20 @@ services:
     environment:
       MYSQL_DATABASE: 'laraapp_db'
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
+#      MYSQL_USER: "admin"
       MYSQL_ROOT_PASSWORD: ""
     volumes:
       - ./db:/var/lib/mysql
+    networks:
+      - my-network
 
   adminer:
     image: adminer
     restart: always
     ports:
       - 8085:8080
+    networks:
+      - my-network
 
 networks:
   my-network:

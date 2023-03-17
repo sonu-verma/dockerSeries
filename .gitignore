@@ -1,4 +1,5 @@
-.idea
+.idea/
+db/
 /vendor/
 node_modules/
 npm-debug.log
